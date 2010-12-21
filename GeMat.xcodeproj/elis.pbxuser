@@ -1,0 +1,145 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* GeMatAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 478}}";
+			sepNavSelRange = "{383, 0}";
+			sepNavVisRange = "{0, 443}";
+			sepNavWindowFrame = "{{15, 439}, {750, 558}}";
+		};
+	};
+	1D3623250D0F684500981E51 /* GeMatAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1637, 1598}}";
+			sepNavSelRange = "{2599, 0}";
+			sepNavVisRange = "{2213, 588}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* GeMat */ = {
+		activeExec = 0;
+		executables = (
+			4C80383A12C1682C00B1536A /* GeMat */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4C80383A12C1682C00B1536A /* GeMat */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* GeMat */;
+		breakpoints = (
+		);
+		codeSenseManager = 4C80384512C1684500B1536A /* Code sense */;
+		executables = (
+			4C80383A12C1682C00B1536A /* GeMat */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					833,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 314666265;
+			PBXWorkspaceStateSaveDate = 314666265;
+		};
+		perUserProjectItems = {
+			4C80386A12C16C6300B1536A = 4C80386A12C16C6300B1536A /* PBXTextBookmark */;
+			4C80387312C16CFE00B1536A = 4C80387312C16CFE00B1536A /* PBXTextBookmark */;
+			4C80387412C16CFE00B1536A = 4C80387412C16CFE00B1536A /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4C80384412C1684500B1536A /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4C80383A12C1682C00B1536A /* GeMat */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = GeMat;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	4C80384412C1684500B1536A /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4C80384512C1684500B1536A /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4C80386A12C16C6300B1536A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* GeMatAppDelegate.h */;
+		name = "GeMatAppDelegate.h: 22";
+		rLen = 0;
+		rLoc = 436;
+		rType = 0;
+		vrLen = 483;
+		vrLoc = 0;
+	};
+	4C80387312C16CFE00B1536A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* GeMatAppDelegate.m */;
+		name = "GeMatAppDelegate.m: 86";
+		rLen = 0;
+		rLoc = 2599;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 2213;
+	};
+	4C80387412C16CFE00B1536A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* GeMatAppDelegate.h */;
+		name = "GeMatAppDelegate.h: 21";
+		rLen = 0;
+		rLoc = 383;
+		rType = 0;
+		vrLen = 483;
+		vrLoc = 0;
+	};
+}
