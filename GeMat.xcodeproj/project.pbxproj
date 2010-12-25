@@ -13,7 +13,9 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		4C9550B412C2B3ED0002D8EC /* GimatricCalcTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550B312C2B3ED0002D8EC /* GimatricCalcTestCase.m */; };
+		4C9550B412C2B3ED0002D8EC /* GematricCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */; };
+		4C9550CE12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
+		4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,7 +23,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4C9550A912C2B3B80002D8EC /* Tests */;
+			remoteGlobalIDString = 4C9550A912C2B3B80002D8EC;
 			remoteInfo = Tests;
 		};
 /* End PBXContainerItemProxy section */
@@ -38,8 +40,9 @@
 		32CA4F630368D1EE00C91783 /* GeMat_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeMat_Prefix.pch; sourceTree = "<group>"; };
 		4C9550AA12C2B3B80002D8EC /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9550AB12C2B3B80002D8EC /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		4C9550B212C2B3ED0002D8EC /* GimatricCalcTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GimatricCalcTestCase.h; sourceTree = "<group>"; };
-		4C9550B312C2B3ED0002D8EC /* GimatricCalcTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GimatricCalcTestCase.m; sourceTree = "<group>"; };
+		4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricCalcTests.m; sourceTree = "<group>"; };
+		4C9550CC12C2B7170002D8EC /* GematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GematricCalc.h; sourceTree = "<group>"; };
+		4C9550CD12C2B7170002D8EC /* GematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricCalc.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GeMat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GeMat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +72,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* GeMatAppDelegate.h */,
 				1D3623250D0F684500981E51 /* GeMatAppDelegate.m */,
+				4C9550CC12C2B7170002D8EC /* GematricCalc.h */,
+				4C9550CD12C2B7170002D8EC /* GematricCalc.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -85,7 +90,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				4C9550B112C2B3D00002D8EC /* Tests */,
+				4C9550B112C2B3D00002D8EC /* UTests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -124,13 +129,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4C9550B112C2B3D00002D8EC /* Tests */ = {
+		4C9550B112C2B3D00002D8EC /* UTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C9550B212C2B3ED0002D8EC /* GimatricCalcTestCase.h */,
-				4C9550B312C2B3ED0002D8EC /* GimatricCalcTestCase.m */,
+				4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */,
 			);
-			name = Tests;
+			name = UTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +242,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* GeMatAppDelegate.m in Sources */,
+				4C9550CE12C2B7170002D8EC /* GematricCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C9550B412C2B3ED0002D8EC /* GimatricCalcTestCase.m in Sources */,
+				4C9550B412C2B3ED0002D8EC /* GematricCalcTests.m in Sources */,
+				4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

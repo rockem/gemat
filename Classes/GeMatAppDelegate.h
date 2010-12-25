@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class GematricCalc;
+
 @interface GeMatAppDelegate : NSObject <UIApplicationDelegate> {
 	
 	IBOutlet UILabel *lblPhraseValue;
 	IBOutlet UITextField *txtPhrase;
-	
+		
 	UIWindow *window;
+	
+	GematricCalc *gematricCalc;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

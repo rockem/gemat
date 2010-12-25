@@ -7,6 +7,7 @@
 //
 
 #import "GeMatAppDelegate.h"
+#import "GematricCalc.h"
 
 @implementation GeMatAppDelegate
 
@@ -73,14 +74,21 @@
      */
 }
 
+- (id)init {
+	[super init];
+	gematricCalc = [[GematricCalc new] retain];
+	return self;
+}
+
 - (void)dealloc {
-    [window release];
-    [super dealloc];
+	[gematricCalc release];
+	[window release];
+	[super dealloc];
 }
 
 - (IBAction)showPhraseValue:(UITextField *)textField{
-	
-	[lblPhraseValue setText:@"123"];
+	int gematricValue = [gematricCalc getValueOf:[textField text]];
+	[lblPhraseValue setText:[NSString stringWithFormat:@"%i", gematricValue]];
 	[textField resignFirstResponder];
 }
 
