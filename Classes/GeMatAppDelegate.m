@@ -18,12 +18,10 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    	gematricCalc = [[GematricCalc new] retain];
+    	[self.window makeKeyAndVisible];
     
-    // Override point for customization after application launch.
-    
-    [self.window makeKeyAndVisible];
-    
-    return YES;
+	return YES;
 }
 
 
@@ -72,12 +70,6 @@
     /*
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
-}
-
-- (id)init {
-	[super init];
-	gematricCalc = [[GematricCalc new] retain];
-	return self;
 }
 
 - (void)dealloc {

@@ -31,12 +31,17 @@
 
 - (void) testShouldRetrieveValueOfAWordDVASH {
 	int result = [gematricCalc getValueOf:@"דבש"];
-	STAssertTrue(result == 306, @"Wrong value");
+	STAssertEquals(306, result, @"");
 }
 
 - (void) testShouldRetrieveValueOfAWordSHALOM {
 	int result = [gematricCalc getValueOf:@"שלום"];
-	STAssertTrue(result == 376, @"Wrong value");
+	STAssertEquals(376, result, @"");
+}
+
+- (void) testShouldRetrieveValueOfASentense {
+	int result = [gematricCalc getValueOf:@"שבת שלום"];
+	STAssertEquals(1078, result, @"");
 }
 
 
