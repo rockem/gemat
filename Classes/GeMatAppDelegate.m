@@ -80,7 +80,7 @@
 
 - (IBAction)showPhraseValue:(UITextField *)textField{
 	int gematricValue = [gematricCalc getValueOf:[textField text]];
-	[lblPhraseValue setText:[NSString stringWithFormat:@"%i", gematricValue]];
+	[lblPhraseValue setText:[NSString stringWithFormat:@"%@ = %i", [textField text], gematricValue]];
 	[textField resignFirstResponder];
 }
 
