@@ -10,7 +10,7 @@
 
 
 @interface GematricCalc : NSObject {
-	enum eCalculationMethod {Regular = 2, Big = 1, Small = 0} calculationMethod;
+	enum eCalculationMethod {Regular = 1, Big = 0} calculationMethod;
 	
 	NSMutableDictionary *gematricDictionary;
 

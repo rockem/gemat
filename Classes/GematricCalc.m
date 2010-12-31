@@ -19,9 +19,13 @@
 @implementation GematricCalc
 @synthesize calulationMethod;
 
-- (id)initWithCalculationMethod:(enum eCalculationMethod)method {
+- (id)init {
 	[super init];
 	gematricDictionary = [[NSMutableDictionary dictionary] retain];
+	return self;
+}
+- (id)initWithCalculationMethod:(enum eCalculationMethod)method {
+	[self init];
 	[self setCalculationMethod:method];
 	return self;
 }

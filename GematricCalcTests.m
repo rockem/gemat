@@ -13,9 +13,7 @@
 @interface GematricCalcTests : SenTestCase {
 	GematricCalc *gematricCalc;
 }
-
 @end
-
 
 @implementation GematricCalcTests
 
