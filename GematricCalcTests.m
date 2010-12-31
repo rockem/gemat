@@ -20,7 +20,7 @@
 @implementation GematricCalcTests
 
 - (void) setUp {
-	gematricCalc = [[GematricCalc new] retain];
+	gematricCalc = [[GematricCalc alloc] initWithCalculationMethod:Regular];
 	STAssertNotNil(gematricCalc, @"Cannot create GematricCalc instance");
 }
 
@@ -44,5 +44,9 @@
 	STAssertEquals(1078, result, @"");
 }
 
+-(void) testShouldRetrieveValueInBigMethod {
+	[gematricCalc setCalculationMethod:Big];
+	STAssertEquals(936, [gematricCalc getValueOf:@"שלום"], @"Should be 936");
+}
 
 @end

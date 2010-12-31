@@ -14,6 +14,7 @@
 	
 	IBOutlet UILabel *lblPhraseValue;
 	IBOutlet UITextField *txtPhrase;
+	IBOutlet UISegmentedControl *scMethodSelector;
 		
 	UIWindow *window;
 	
@@ -23,5 +24,7 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
 - (IBAction)showPhraseValue:(UITextField *)textField;
+- (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector;
+
 @end
 

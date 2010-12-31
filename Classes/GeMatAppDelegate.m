@@ -13,13 +13,13 @@
 
 @synthesize window;
 
-
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    	gematricCalc = [[GematricCalc new] retain];
-    	[self.window makeKeyAndVisible];
+    	gematricCalc = [[GematricCalc alloc] init];
+	[scMethodSelector setSelectedSegmentIndex:[scMethodSelector numberOfSegments] - 1];
+	[self.window makeKeyAndVisible];
     
 	return YES;
 }
@@ -82,6 +82,12 @@
 	int gematricValue = [gematricCalc getValueOf:[textField text]];
 	[lblPhraseValue setText:[NSString stringWithFormat:@"%i", gematricValue]];
 	[textField resignFirstResponder];
+}
+
+- (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector {
+	NSInteger index = [methodSelector selectedSegmentIndex];
+	NSLog(@"method %i was selected", index);
+	[gematricCalc setCalculationMethod:index];
 }
 
 

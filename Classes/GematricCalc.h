@@ -10,9 +10,15 @@
 
 
 @interface GematricCalc : NSObject {
+	enum eCalculationMethod {Regular = 2, Big = 1, Small = 0} calculationMethod;
+	
 	NSMutableDictionary *gematricDictionary;
-}
 
+}
+@property (nonatomic) enum eCalculationMethod calulationMethod;
+
+- (id)initWithCalculationMethod:(enum eCalculationMethod)method;
 - (int)getValueOf:(NSString *)phrase;
+- (void)setCalculationMethod:(enum eCalculationMethod)method;
 
 @end
