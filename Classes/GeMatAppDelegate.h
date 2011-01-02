@@ -19,11 +19,11 @@
 	UIWindow *window;
 	
 	GematricCalc *gematricCalc;
+	NSString *currentPhrase;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
-- (IBAction)showPhraseValue:(UITextField *)textField;
 - (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector;
 
 @end

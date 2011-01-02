@@ -9,15 +9,19 @@
 #import "GeMatAppDelegate.h"
 #import "GematricCalc.h"
 
-@implementation GeMatAppDelegate
+@interface GeMatAppDelegate() 
+- (void)updatePhraseValue;
+@end
+	
 
+@implementation GeMatAppDelegate
 @synthesize window;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-    	gematricCalc = [[GematricCalc alloc] init];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	gematricCalc = [[GematricCalc alloc] init];
 	[scMethodSelector setSelectedSegmentIndex:[scMethodSelector numberOfSegments] - 1];
 	[self.window makeKeyAndVisible];
     
@@ -73,21 +77,33 @@
 }
 
 - (void)dealloc {
+	[currentPhrase release];
 	[gematricCalc release];
 	[window release];
 	[super dealloc];
 }
 
-- (IBAction)showPhraseValue:(UITextField *)textField{
-	int gematricValue = [gematricCalc getValueOf:[textField text]];
-	[lblPhraseValue setText:[NSString stringWithFormat:@"%@ = %i", [textField text], gematricValue]];
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	NSLog(@"Phrase entered:%@", [textField text]);
+	[currentPhrase release];
+	currentPhrase = [[textField text] copy];
+	[self updatePhraseValue];
 	[textField resignFirstResponder];
+	return YES;
+}
+
+- (void)updatePhraseValue {
+	if (currentPhrase != nil) {
+		int gematricValue = [gematricCalc getValueOf:currentPhrase];
+		[lblPhraseValue setText:[NSString stringWithFormat:@"%@ = %i", currentPhrase, gematricValue]];
+	}
 }
 
 - (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector {
 	NSInteger index = [methodSelector selectedSegmentIndex];
 	NSLog(@"method %i was selected", index);
 	[gematricCalc setCalculationMethod:index];
+	[self updatePhraseValue];
 }
 
 
