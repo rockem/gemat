@@ -16,7 +16,6 @@
 		4C9550B412C2B3ED0002D8EC /* GematricCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */; };
 		4C9550CE12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
 		4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
-		4CB1E24512D0E550003292BA /* GeMatAppDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1E22C12D0E47A003292BA /* GeMatAppDelegateTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 		4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricCalcTests.m; sourceTree = "<group>"; };
 		4C9550CC12C2B7170002D8EC /* GematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GematricCalc.h; sourceTree = "<group>"; };
 		4C9550CD12C2B7170002D8EC /* GematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricCalc.m; sourceTree = "<group>"; };
-		4CB1E22C12D0E47A003292BA /* GeMatAppDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeMatAppDelegateTests.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GeMat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GeMat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */,
-				4CB1E22C12D0E47A003292BA /* GeMatAppDelegateTests.m */,
 			);
 			name = UTests;
 			sourceTree = "<group>";
@@ -255,7 +252,6 @@
 			files = (
 				4C9550B412C2B3ED0002D8EC /* GematricCalcTests.m in Sources */,
 				4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */,
-				4CB1E24512D0E550003292BA /* GeMatAppDelegateTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

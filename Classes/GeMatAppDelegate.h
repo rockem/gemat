@@ -13,7 +13,7 @@
 @interface GeMatAppDelegate : NSObject <UIApplicationDelegate> {
 	
 	IBOutlet UILabel *lblPhraseValue;
-	IBOutlet UITextField *txtPhrase;
+	IBOutlet UISearchBar *txtPhrase;
 	IBOutlet UISegmentedControl *scMethodSelector;
 		
 	UIWindow *window;

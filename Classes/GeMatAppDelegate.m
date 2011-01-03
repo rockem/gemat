@@ -83,13 +83,13 @@
 	[super dealloc];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	NSLog(@"Phrase entered:%@", [textField text]);
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	NSLog(@"Phrase entered:%@", [searchBar text]);
 	[currentPhrase release];
-	currentPhrase = [[textField text] copy];
+	currentPhrase = [[searchBar text] copy];
 	[self updatePhraseValue];
-	[textField resignFirstResponder];
-	return YES;
+	[searchBar resignFirstResponder];
+	
 }
 
 - (void)updatePhraseValue {
