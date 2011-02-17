@@ -8,23 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class GematricCalc;
+@class GematViewController;
 
 @interface GeMatAppDelegate : NSObject <UIApplicationDelegate> {
 	
-	IBOutlet UILabel *lblPhraseValue;
-	IBOutlet UISearchBar *txtPhrase;
-	IBOutlet UISegmentedControl *scMethodSelector;
-		
+	GematViewController *gematViewController;
 	UIWindow *window;
-	
-	GematricCalc *gematricCalc;
-	NSString *currentPhrase;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
-- (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector;
 
 @end
 

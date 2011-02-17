@@ -7,12 +7,7 @@
 //
 
 #import "GeMatAppDelegate.h"
-#import "GematricCalc.h"
-
-@interface GeMatAppDelegate() 
-- (void)updatePhraseValue;
-@end
-	
+#import "GematViewController.h"
 
 @implementation GeMatAppDelegate
 @synthesize window;
@@ -21,8 +16,12 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	gematricCalc = [[GematricCalc alloc] init];
-	[scMethodSelector setSelectedSegmentIndex:[scMethodSelector numberOfSegments] - 1];
+	gematViewController = [[GematViewController alloc] init];
+	UINavigationController *navigationBar = [[UINavigationController alloc] initWithRootViewController:gematViewController];
+	
+	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]  bounds]];
+	[window setAutoresizesSubviews:YES];
+	[window addSubview:[navigationBar view]];
 	[self.window makeKeyAndVisible];
     
 	return YES;
@@ -77,34 +76,8 @@
 }
 
 - (void)dealloc {
-	[currentPhrase release];
-	[gematricCalc release];
 	[window release];
 	[super dealloc];
 }
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-	NSLog(@"Phrase entered:%@", [searchBar text]);
-	[currentPhrase release];
-	currentPhrase = [[searchBar text] copy];
-	[self updatePhraseValue];
-	[searchBar resignFirstResponder];
-	
-}
-
-- (void)updatePhraseValue {
-	if (currentPhrase != nil) {
-		int gematricValue = [gematricCalc getValueOf:currentPhrase];
-		[lblPhraseValue setText:[NSString stringWithFormat:@"%@ = %i", currentPhrase, gematricValue]];
-	}
-}
-
-- (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector {
-	NSInteger index = [methodSelector selectedSegmentIndex];
-	NSLog(@"method %i was selected", index);
-	[gematricCalc setCalculationMethod:index];
-	[self updatePhraseValue];
-}
-
 
 @end
