@@ -10,8 +10,11 @@
 #import "GematricCalc.h"
 
 
-@interface GematViewController() 
+@interface GematViewController()
+- (void)initNavigationBar;
 - (void)updateSavedPhrasesValue;
+- (void)enterEditingMode;
+- (void)leaveEditingMode;
 @end
 
 @implementation GematViewController
@@ -36,10 +39,42 @@
 	gematricCalc = [[GematricCalc alloc] init];
 	self.savedPhrases = [[NSMutableArray alloc] init];
 	[scMethodSelector setSelectedSegmentIndex:[scMethodSelector numberOfSegments] - 1];
+	[self initNavigationBar];
 	
 	[super viewDidLoad];
 	[[self view] setAutoresizesSubviews:YES];
 	[[self view] setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+}
+
+- (void)initNavigationBar {
+	[[self navigationItem] setRightBarButtonItem:[self editButtonItem]];
+	[[self navigationItem] setTitle:@"Gemat"];
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate {
+	[super setEditing:editing animated:animate];
+	if(editing) {
+		[self enterEditingMode];
+	} else {
+		[self leaveEditingMode];
+	}
+}
+
+- (void)enterEditingMode {
+	[tblPhrases setEditing:YES animated:YES];
+}
+
+- (void)leaveEditingMode {
+	[tblPhrases setEditing:NO animated:YES];
+	[self updateSavedPhrasesValue];
+}
+
+- (void)tableView:(UITableView *)tableView 
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+	if(editingStyle == UITableViewCellEditingStyleDelete) {
+		[self.savedPhrases removeObjectAtIndex:[indexPath row]]; 
+		[tblPhrases deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+	}
 }
 
 
@@ -96,13 +131,24 @@
 	
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)aTableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.editing == NO || !indexPath) return UITableViewCellEditingStyleNone;
+	// Determine the editing style based on whether the cell is a placeholder for adding content or already
+	// existing content. Existing content can be deleted.
+	if (self.editing) {
+		return UITableViewCellEditingStyleDelete;
+	} else {
+		return UITableViewCellEditingStyleNone;
+	}
+}
+
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	NSLog(@"Phrase entered:%@", [searchBar text]);
 	[[self savedPhrases] insertObject:[[searchBar text] copy] atIndex:0];
 	[self updateSavedPhrasesValue];
 	[searchBar setText:@""];
 	[searchBar resignFirstResponder];
-	
 }
 
 - (void)updateSavedPhrasesValue {
