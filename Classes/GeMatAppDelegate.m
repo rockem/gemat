@@ -9,6 +9,14 @@
 #import "GeMatAppDelegate.h"
 #import "GematViewController.h"
 
+@interface GeMatAppDelegate() 
+- (void)archivePhrases;
+- (NSString *)pathInDocumentDirectory:(NSString *)fileName;
+- (NSString *)phrasesArrayPath;
+- (GematViewController *)createGematViewController;
+- (NSMutableArray *)createPhrasesArray;
+@end
+
 @implementation GeMatAppDelegate
 @synthesize window;
 
@@ -17,6 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	gematViewController = [[GematViewController alloc] init];
+	gematViewController = [self createGematViewController];
 	UINavigationController *navigationBar = [[UINavigationController alloc] initWithRootViewController:gematViewController];
 	
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]  bounds]];
@@ -37,12 +46,8 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
-     */
+   [self archivePhrases];
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     /*
@@ -59,10 +64,12 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    /*
-     Called when the application is about to terminate.
-     See also applicationDidEnterBackground:.
-     */
+    [self archivePhrases];
+}
+
+- (void)archivePhrases {
+	NSMutableArray *phrasesArray = [gematViewController phrases];
+	[NSKeyedArchiver archiveRootObject:phrasesArray toFile:[self phrasesArrayPath]];
 }
 
 
@@ -78,6 +85,34 @@
 - (void)dealloc {
 	[window release];
 	[super dealloc];
+}
+
+- (GematViewController *)createGematViewController {
+	GematViewController *viewController = [[GematViewController alloc] init];
+	[viewController setPhrases:[self createPhrasesArray]];
+	return viewController;
+}
+
+- (NSMutableArray *)createPhrasesArray {
+	NSMutableArray *possessionArray = [NSKeyedUnarchiver unarchiveObjectWithFile:[self phrasesArrayPath]];
+	if (!possessionArray) {
+		possessionArray = [NSMutableArray array];
+	}
+	return possessionArray;
+}
+
+- (NSString *)phrasesArrayPath {	
+	return [self pathInDocumentDirectory:@"Phrases.data"]; 
+}
+
+- (NSString *)pathInDocumentDirectory:(NSString *)fileName {	
+	// Get list of document directories in sandbox 
+	NSArray *documentDirectories =
+		NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	// Get one and only document directory from that list 
+	NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+	// Append passed in file name to that directory, return it }
+	return [documentDirectory stringByAppendingPathComponent:fileName];
 }
 
 @end

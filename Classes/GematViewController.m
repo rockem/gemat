@@ -12,13 +12,13 @@
 
 @interface GematViewController()
 - (void)initNavigationBar;
-- (void)updateSavedPhrasesValue;
+- (void)updatephrasesValue;
 - (void)enterEditingMode;
 - (void)leaveEditingMode;
 @end
 
 @implementation GematViewController
-@synthesize savedPhrases;
+@synthesize phrases;
 
 /*- (id)init {
 	return self;
@@ -37,7 +37,6 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	gematricCalc = [[GematricCalc alloc] init];
-	self.savedPhrases = [[NSMutableArray alloc] init];
 	[scMethodSelector setSelectedSegmentIndex:[scMethodSelector numberOfSegments] - 1];
 	[self initNavigationBar];
 	
@@ -66,13 +65,13 @@
 
 - (void)leaveEditingMode {
 	[tblPhrases setEditing:NO animated:YES];
-	[self updateSavedPhrasesValue];
+	[self updatephrasesValue];
 }
 
 - (void)tableView:(UITableView *)tableView 
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if(editingStyle == UITableViewCellEditingStyleDelete) {
-		[self.savedPhrases removeObjectAtIndex:[indexPath row]]; 
+		[self.phrases removeObjectAtIndex:[indexPath row]]; 
 		[tblPhrases deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 	}
 }
@@ -101,14 +100,14 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 
 
 - (void)dealloc {
-	[savedPhrases release];
+	[phrases release];
 	[gematricCalc release];
 	[super dealloc];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-	return [self.savedPhrases count];
+	return [self.phrases count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -124,7 +123,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 	}
 	
 	NSUInteger row = [indexPath row];
-	NSString *currentPhrase = [savedPhrases objectAtIndex:row];
+	NSString *currentPhrase = [phrases objectAtIndex:row];
 	int gematricValue = [gematricCalc getValueOf:currentPhrase];
 	cell.textLabel.text = [NSString stringWithFormat:@"%@ = %i", currentPhrase, gematricValue];
 	return cell;
@@ -145,13 +144,13 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	NSLog(@"Phrase entered:%@", [searchBar text]);
-	[[self savedPhrases] insertObject:[[searchBar text] copy] atIndex:0];
-	[self updateSavedPhrasesValue];
+	[[self phrases] insertObject:[[searchBar text] copy] atIndex:0];
+	[self updatephrasesValue];
 	[searchBar setText:@""];
 	[searchBar resignFirstResponder];
 }
 
-- (void)updateSavedPhrasesValue {
+- (void)updatephrasesValue {
 	[tblPhrases performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
@@ -159,7 +158,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 	NSInteger index = [methodSelector selectedSegmentIndex];
 	NSLog(@"method %i was selected", index);
 	[gematricCalc setCalculationMethod:index];
-	[self updateSavedPhrasesValue];
+	[self updatephrasesValue];
 }
 
 

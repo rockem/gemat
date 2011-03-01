@@ -18,9 +18,9 @@
 	IBOutlet UITableView *tblPhrases;
 		
 	GematricCalc *gematricCalc;
-	NSMutableArray *savedPhrases;
+	NSMutableArray *phrases;
 }
-@property(nonatomic, retain) NSMutableArray *savedPhrases;
+@property(nonatomic, retain) NSMutableArray *phrases;
 - (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector;
 
 @end
