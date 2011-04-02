@@ -15,10 +15,9 @@
 	NSMutableDictionary *gematricDictionary;
 
 }
-@property (nonatomic) enum eCalculationMethod calulationMethod;
+@property (nonatomic) enum eCalculationMethod calculationMethod;
 
 - (id)initWithCalculationMethod:(enum eCalculationMethod)method;
 - (int)getValueOf:(NSString *)phrase;
-- (void)setCalculationMethod:(enum eCalculationMethod)method;
 
 @end

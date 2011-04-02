@@ -8,6 +8,7 @@
 
 #import "GematViewController.h"
 #import "GematricCalc.h"
+#import "ParallelPhrasesViewController.h"
 
 
 @interface GematViewController()
@@ -15,6 +16,8 @@
 - (void)updatephrasesValue;
 - (void)enterEditingMode;
 - (void)leaveEditingMode;
+- (UITableViewCell *)createPhraseCell: (UITableView *) tableView;
+- (NSString*)getCellTextForIndex:(NSIndexPath *) indexPath;
 @end
 
 @implementation GematViewController
@@ -113,6 +116,12 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+	UITableViewCell *cell = [self createPhraseCell: tableView];
+	[[cell textLabel] setText:[self getCellTextForIndex:indexPath]];
+	return cell;
+}
+
+- (UITableViewCell *)createPhraseCell: (UITableView *) tableView  {
 	static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
 	UITableViewCell *cell = [tableView
 							 dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
@@ -121,13 +130,14 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 									  reuseIdentifier:SimpleTableIdentifier] autorelease];
 		cell.textLabel.textAlignment = UITextAlignmentRight;
 	}
-	
+	return cell;
+}
+
+- (NSString*)getCellTextForIndex:(NSIndexPath *) indexPath {
 	NSUInteger row = [indexPath row];
 	NSString *currentPhrase = [phrases objectAtIndex:row];
 	int gematricValue = [gematricCalc getValueOf:currentPhrase];
-	cell.textLabel.text = [NSString stringWithFormat:@"%@ = %i", currentPhrase, gematricValue];
-	return cell;
-	
+	return [NSString stringWithFormat:@"%@ = %i", currentPhrase, gematricValue];
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)aTableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -139,8 +149,18 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 	} else {
 		return UITableViewCellEditingStyleNone;
 	}
-}
+}			
 
+- (void)tableView:(UITableView *)aTableView
+	didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+	if (!parallelPhrasesViewController) { 
+		parallelPhrasesViewController = [[ParallelPhrasesViewController alloc] init];
+	}
+	[parallelPhrasesViewController setPhraseAndMethod:[phrases objectAtIndex:[indexPath row]] calcMethod:[gematricCalc calculationMethod]];
+
+	[[self navigationController] pushViewController:parallelPhrasesViewController animated:YES];
+}
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	NSLog(@"Phrase entered:%@", [searchBar text]);

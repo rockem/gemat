@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class GematricCalc;
+@class ParallelPhrasesViewController;
 
 @interface GematViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 
@@ -19,6 +20,7 @@
 		
 	GematricCalc *gematricCalc;
 	NSMutableArray *phrases;
+	ParallelPhrasesViewController *parallelPhrasesViewController;
 }
 @property(nonatomic, retain) NSMutableArray *phrases;
 - (IBAction)setCalculationMethod:(UISegmentedControl *)methodSelector;
