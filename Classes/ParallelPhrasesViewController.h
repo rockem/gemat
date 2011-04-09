@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "GematricCalc.h"
-// @class GematricCalc;
 
 @interface ParallelPhrasesViewController : UITableViewController {
 	GematricCalc *gematricCalc;

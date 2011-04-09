@@ -222,14 +222,13 @@
 	[gematricCalc setCalculationMethod:method];
 	[self updateParallelPhrases];
 	[[self tableView] reloadData];
-	//[tblPhrases performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
 - (void)updateParallelPhrases {
 	[matchingParallelPhrases removeAllObjects];
 	int selectedPhraseValue = [gematricCalc getValueOf:currentPhrase];
 	for (id phrase in allParallelPhrases) {
-		if([gematricCalc getValueOf:phrase] == selectedPhraseValue) {
+		if([gematricCalc getValueOf:phrase] == selectedPhraseValue && ![phrase isEqualToString:currentPhrase]) {
 			[matchingParallelPhrases addObject:phrase];
 		}
 	}
