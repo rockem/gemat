@@ -225,13 +225,15 @@
 }
 
 - (void)updateParallelPhrases {
-	[matchingParallelPhrases removeAllObjects];
+	NSMutableArray *matchedPhrases = [[NSMutableArray alloc] init];
 	int selectedPhraseValue = [gematricCalc getValueOf:currentPhrase];
 	for (id phrase in allParallelPhrases) {
 		if([gematricCalc getValueOf:phrase] == selectedPhraseValue && ![phrase isEqualToString:currentPhrase]) {
-			[matchingParallelPhrases addObject:phrase];
+			[matchedPhrases addObject:phrase];
 		}
 	}
+	[matchingParallelPhrases removeAllObjects];
+	[matchingParallelPhrases addObjectsFromArray:[matchedPhrases sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]];
 }	
 
 	
