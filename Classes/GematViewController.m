@@ -18,6 +18,7 @@
 - (void)leaveEditingMode;
 - (UITableViewCell *)createPhraseCell: (UITableView *) tableView;
 - (NSString*)getCellTextForIndex:(NSIndexPath *) indexPath;
+- (void)updatePhrasesWith:(NSString*)newPhrase;
 @end
 
 @implementation GematViewController
@@ -164,10 +165,15 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	NSLog(@"Phrase entered:%@", [searchBar text]);
-	[[self phrases] insertObject:[[searchBar text] copy] atIndex:0];
+	[self updatePhrasesWith:[searchBar text]];
 	[self updatephrasesValue];
 	[searchBar setText:@""];
 	[searchBar resignFirstResponder];
+}
+
+- (void)updatePhrasesWith:(NSString*)newPhrase {
+	[[self phrases] removeObject:newPhrase];
+	[[self phrases] insertObject:[newPhrase copy] atIndex:0];
 }
 
 - (void)updatephrasesValue {
