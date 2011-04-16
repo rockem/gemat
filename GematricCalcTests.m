@@ -18,7 +18,7 @@
 @implementation GematricCalcTests
 
 - (void) setUp {
-	gematricCalc = [[GematricCalc alloc] initWithCalculationMethod:Regular];
+	gematricCalc = [[GematricCalc alloc] initWithCalculationMethod:Big];
 	STAssertNotNil(gematricCalc, @"Cannot create GematricCalc instance");
 }
 
@@ -41,13 +41,13 @@
 	STAssertEquals(1078, result, @"");
 }
 
-- (void) testShouldRetrieveValueInBigMethod {
+/*- (void) testShouldRetrieveValueInBigMethod {
 	[gematricCalc setCalculationMethod:Big];
 	STAssertEquals(936, [gematricCalc getValueOf:@"שלום"], @"Should be 936");
-}
+}*/
 
 - (void)testShouldRetrieveCalculationMethod {
-	STAssertEquals(Regular, [gematricCalc calculationMethod], @"");
+	STAssertEquals(Big, [gematricCalc calculationMethod], @"");
 }
 
 - (void)testShouldRetrieveValueUsingSmallMethod {

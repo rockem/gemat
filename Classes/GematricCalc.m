@@ -8,7 +8,6 @@
 
 #import "GematricCalc.h"
 #import "RegularNumberGematricPhraseCalc.h"
-#import "BigNumberGematricCalc.h"
 #import "SmallMethodGematricCalc.h"
 #import "MacroUtils.h"
 
@@ -29,8 +28,7 @@
 - (NSDictionary*)createCalcTypeToPhraseCalcMap {
 	NSMutableDictionary *phraseCalcs = [[NSMutableDictionary alloc] init];
 	
-	[phraseCalcs setObject:[[RegularNumberGematricPhraseCalc alloc] init] forKey:INTOBJ(Regular)];
-	[phraseCalcs setObject:[[BigNumberGematricCalc alloc] init] forKey:INTOBJ(Big)];
+	[phraseCalcs setObject:[[RegularNumberGematricPhraseCalc alloc] init] forKey:INTOBJ(Big)];
 	GematricPhraseCalc *regularPhraseCalc = [[RegularNumberGematricPhraseCalc alloc] init];
 	[phraseCalcs setObject:[[SmallMethodGematricCalc alloc] initWithAnotherCalc:regularPhraseCalc] forKey:INTOBJ(Small)];
 	

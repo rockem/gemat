@@ -22,8 +22,6 @@
 		4CD32C401358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */; };
 		4CD32C4413599243007C7F23 /* SmallMethodGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */; };
 		4CD32C4513599243007C7F23 /* SmallMethodGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */; };
-		4CD32C481359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */; };
-		4CD32C491359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */; };
 		4CD32CBB1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */; };
 		4CD32CBC1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */; };
 		4CEC9A94133A1C9B00EB5AA6 /* phrases.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */; };
@@ -64,8 +62,6 @@
 		4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularNumberGematricPhraseCalc.m; sourceTree = "<group>"; };
 		4CD32C4213599243007C7F23 /* SmallMethodGematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallMethodGematricCalc.h; sourceTree = "<group>"; };
 		4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallMethodGematricCalc.m; sourceTree = "<group>"; };
-		4CD32C461359A7A3007C7F23 /* BigNumberGematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigNumberGematricCalc.h; sourceTree = "<group>"; };
-		4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigNumberGematricCalc.m; sourceTree = "<group>"; };
 		4CD32C7F1359B93F007C7F23 /* MacroUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroUtils.h; path = Classes/MacroUtils.h; sourceTree = "<group>"; };
 		4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricPhraseCalc.m; sourceTree = "<group>"; };
 		4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrases.txt; sourceTree = "<group>"; };
@@ -109,8 +105,6 @@
 				4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */,
 				4CD32C4213599243007C7F23 /* SmallMethodGematricCalc.h */,
 				4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */,
-				4CD32C461359A7A3007C7F23 /* BigNumberGematricCalc.h */,
-				4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */,
 				4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */,
 			);
 			path = Classes;
@@ -289,7 +283,6 @@
 				4C75F579131FEC39005BF437 /* ParallelPhrasesViewController.m in Sources */,
 				4CD32C3F1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */,
 				4CD32C4513599243007C7F23 /* SmallMethodGematricCalc.m in Sources */,
-				4CD32C491359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */,
 				4CD32CBC1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +295,6 @@
 				4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */,
 				4CD32C401358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */,
 				4CD32C4413599243007C7F23 /* SmallMethodGematricCalc.m in Sources */,
-				4CD32C481359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */,
 				4CD32CBB1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="7"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -55,17 +55,15 @@
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBSegmentControlStyle">2</int>
-								<int key="IBNumberOfSegments">3</int>
+								<int key="IBNumberOfSegments">2</int>
 								<int key="IBSelectedSegmentIndex">0</int>
 								<object class="NSArray" key="IBSegmentTitles">
 									<bool key="EncodedWithXMLCoder">YES</bool>
 									<string>שיטה קטנה</string>
-									<string>מספר גדול</string>
-									<string>מספר רגיל</string>
+									<string>שיטה גדולה</string>
 								</object>
 								<object class="NSMutableArray" key="IBSegmentWidths">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<real value="0.0"/>
 									<real value="0.0"/>
 									<real value="0.0"/>
 								</object>
@@ -73,18 +71,15 @@
 									<bool key="EncodedWithXMLCoder">YES</bool>
 									<boolean value="YES"/>
 									<boolean value="YES"/>
-									<boolean value="YES"/>
 								</object>
 								<object class="NSMutableArray" key="IBSegmentContentOffsets">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>{0, 0}</string>
 									<string>{0, 0}</string>
 									<string>{0, 0}</string>
 								</object>
 								<object class="NSMutableArray" key="IBSegmentImages">
 									<bool key="EncodedWithXMLCoder">YES</bool>
 									<object class="NSNull" id="4"/>
-									<reference ref="4"/>
 									<reference ref="4"/>
 								</object>
 							</object>
@@ -115,11 +110,12 @@
 							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 						</object>
 						<object class="IBUITextInputTraits" key="IBTextInputTraits">
-							<int key="IBUIAutocorrectionType">1</int>
+							<int key="IBUIAutocorrectionType">2</int>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-						<reference key="IBScopeButtonTitles" ref="0"/>
-						<int key="IBSelectedScopeButtonIndex">2</int>
+						<object class="NSArray" key="IBScopeButtonTitles">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 					</object>
 					<object class="IBUITableView" id="1028800064">
 						<reference key="NSNextResponder" ref="191373211"/>
