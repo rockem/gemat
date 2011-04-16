@@ -18,6 +18,14 @@
 		4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
 		4CCF2E6B130331A400EF935E /* GematViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF2E69130331A400EF935E /* GematViewController.m */; };
 		4CCF2E6C130331A400EF935E /* GematViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF2E6A130331A400EF935E /* GematViewController.xib */; };
+		4CD32C3F1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */; };
+		4CD32C401358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */; };
+		4CD32C4413599243007C7F23 /* SmallMethodGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */; };
+		4CD32C4513599243007C7F23 /* SmallMethodGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */; };
+		4CD32C481359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */; };
+		4CD32C491359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */; };
+		4CD32CBB1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */; };
+		4CD32CBC1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */; };
 		4CEC9A94133A1C9B00EB5AA6 /* phrases.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */; };
 		4CEC9A95133A1CB100EB5AA6 /* phrases.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */; };
 /* End PBXBuildFile section */
@@ -51,6 +59,15 @@
 		4CCF2E68130331A400EF935E /* GematViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GematViewController.h; sourceTree = "<group>"; };
 		4CCF2E69130331A400EF935E /* GematViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematViewController.m; sourceTree = "<group>"; };
 		4CCF2E6A130331A400EF935E /* GematViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GematViewController.xib; path = Classes/GematViewController.xib; sourceTree = "<group>"; };
+		4CD32C3C1358AC47007C7F23 /* GematricPhraseCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GematricPhraseCalc.h; sourceTree = "<group>"; };
+		4CD32C3D1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegularNumberGematricPhraseCalc.h; sourceTree = "<group>"; };
+		4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularNumberGematricPhraseCalc.m; sourceTree = "<group>"; };
+		4CD32C4213599243007C7F23 /* SmallMethodGematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallMethodGematricCalc.h; sourceTree = "<group>"; };
+		4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallMethodGematricCalc.m; sourceTree = "<group>"; };
+		4CD32C461359A7A3007C7F23 /* BigNumberGematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigNumberGematricCalc.h; sourceTree = "<group>"; };
+		4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigNumberGematricCalc.m; sourceTree = "<group>"; };
+		4CD32C7F1359B93F007C7F23 /* MacroUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroUtils.h; path = Classes/MacroUtils.h; sourceTree = "<group>"; };
+		4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricPhraseCalc.m; sourceTree = "<group>"; };
 		4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrases.txt; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GeMat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GeMat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +104,14 @@
 				4CCF2E69130331A400EF935E /* GematViewController.m */,
 				4C9550CC12C2B7170002D8EC /* GematricCalc.h */,
 				4C9550CD12C2B7170002D8EC /* GematricCalc.m */,
+				4CD32C3C1358AC47007C7F23 /* GematricPhraseCalc.h */,
+				4CD32C3D1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.h */,
+				4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */,
+				4CD32C4213599243007C7F23 /* SmallMethodGematricCalc.h */,
+				4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */,
+				4CD32C461359A7A3007C7F23 /* BigNumberGematricCalc.h */,
+				4CD32C471359A7A3007C7F23 /* BigNumberGematricCalc.m */,
+				4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -117,6 +142,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4CD32C7F1359B93F007C7F23 /* MacroUtils.h */,
 				32CA4F630368D1EE00C91783 /* GeMat_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -261,6 +287,10 @@
 				4C9550CE12C2B7170002D8EC /* GematricCalc.m in Sources */,
 				4CCF2E6B130331A400EF935E /* GematViewController.m in Sources */,
 				4C75F579131FEC39005BF437 /* ParallelPhrasesViewController.m in Sources */,
+				4CD32C3F1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */,
+				4CD32C4513599243007C7F23 /* SmallMethodGematricCalc.m in Sources */,
+				4CD32C491359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */,
+				4CD32CBC1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +300,10 @@
 			files = (
 				4C9550B412C2B3ED0002D8EC /* GematricCalcTests.m in Sources */,
 				4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */,
+				4CD32C401358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */,
+				4CD32C4413599243007C7F23 /* SmallMethodGematricCalc.m in Sources */,
+				4CD32C481359A7A3007C7F23 /* BigNumberGematricCalc.m in Sources */,
+				4CD32CBB1359BC8E007C7F23 /* GematricPhraseCalc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

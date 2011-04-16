@@ -26,7 +26,6 @@
 	[gematricCalc release];
 }
 
-
 - (void) testShouldRetrieveValueOfAWordDVASH {
 	int result = [gematricCalc getValueOf:@"דבש"];
 	STAssertEquals(306, result, @"");
@@ -49,6 +48,11 @@
 
 - (void)testShouldRetrieveCalculationMethod {
 	STAssertEquals(Regular, [gematricCalc calculationMethod], @"");
+}
+
+- (void)testShouldRetrieveValueUsingSmallMethod {
+	[gematricCalc setCalculationMethod:Small];
+	STAssertEquals(7, [gematricCalc getValueOf:@"שלום"], @"Should be 7");
 }
 
 @end
