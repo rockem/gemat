@@ -16,6 +16,8 @@
 		4C9550B412C2B3ED0002D8EC /* GematricCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */; };
 		4C9550CE12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
 		4C9550CF12C2B7170002D8EC /* GematricCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9550CD12C2B7170002D8EC /* GematricCalc.m */; };
+		4CB5D098137E9AA400809A31 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB5D097137E9AA400809A31 /* MainWindow.xib */; };
+		4CB5D099137E9AA400809A31 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB5D097137E9AA400809A31 /* MainWindow.xib */; };
 		4CCF2E6B130331A400EF935E /* GematViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF2E69130331A400EF935E /* GematViewController.m */; };
 		4CCF2E6C130331A400EF935E /* GematViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF2E6A130331A400EF935E /* GematViewController.xib */; };
 		4CD32C3F1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD32C3E1358B1AB007C7F23 /* RegularNumberGematricPhraseCalc.m */; };
@@ -54,6 +56,7 @@
 		4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricCalcTests.m; sourceTree = "<group>"; };
 		4C9550CC12C2B7170002D8EC /* GematricCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GematricCalc.h; sourceTree = "<group>"; };
 		4C9550CD12C2B7170002D8EC /* GematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricCalc.m; sourceTree = "<group>"; };
+		4CB5D097137E9AA400809A31 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		4CCF2E68130331A400EF935E /* GematViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GematViewController.h; sourceTree = "<group>"; };
 		4CCF2E69130331A400EF935E /* GematViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematViewController.m; sourceTree = "<group>"; };
 		4CCF2E6A130331A400EF935E /* GematViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GematViewController.xib; path = Classes/GematViewController.xib; sourceTree = "<group>"; };
@@ -146,6 +149,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CB5D097137E9AA400809A31 /* MainWindow.xib */,
 				4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */,
 				4CCF2E6A130331A400EF935E /* GematViewController.xib */,
 				8D1107310486CEB800E47090 /* GeMat-Info.plist */,
@@ -242,6 +246,7 @@
 			files = (
 				4CCF2E6C130331A400EF935E /* GematViewController.xib in Resources */,
 				4CEC9A94133A1C9B00EB5AA6 /* phrases.txt in Resources */,
+				4CB5D098137E9AA400809A31 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEC9A95133A1CB100EB5AA6 /* phrases.txt in Resources */,
+				4CB5D099137E9AA400809A31 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +326,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GeMat_Prefix.pch;
 				INFOPLIST_FILE = "GeMat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = GeMat;
 			};
 			name = Debug;
@@ -332,6 +339,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GeMat_Prefix.pch;
 				INFOPLIST_FILE = "GeMat-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = GeMat;
 				VALIDATE_PRODUCT = YES;
 			};
