@@ -128,6 +128,7 @@
 		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
 									  reuseIdentifier:SimpleTableIdentifier] autorelease];
 		cell.textLabel.textAlignment = UITextAlignmentRight;
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
 	return cell;
 }
