@@ -38,16 +38,10 @@
 	allParallelPhrases = [self createParallelPhrasesArray] ;
 	return self;
 }
+
 #pragma mark -
 #pragma mark View lifecycle
 
-
-/*- (void)viewDidLoad {
-	[super viewDidLoad];
-	gematricCalc = [[GematricCalc alloc] init];	
-	matchingParallelPhrases = [NSMutableArray array];
-	allParallelPhrases = [self createParallelPhrasesArray];
-}*/
 
 - (NSArray*)createParallelPhrasesArray {
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"phrases" ofType:@"txt"];  
@@ -71,6 +65,9 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[[self navigationItem] setTitle:currentPhrase];
+    [[self tableView] scrollToRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:0] 
+                            atScrollPosition:UITableViewScrollPositionNone 
+                                    animated:NO];
 }
 
 /*
@@ -184,7 +181,7 @@
 /*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-    /*
+    
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
@@ -219,7 +216,7 @@
 
 - (void)setPhraseAndMethod:(NSString*)newPhrase calcMethod:(enum eCalculationMethod)method {
 	currentPhrase = [newPhrase copy];
-	NSLog(@"new phrase %s", currentPhrase);
+	NSLog(@"new phrase %@", currentPhrase);
 	[gematricCalc setCalculationMethod:method];
 	[self updateParallelPhrases];
 	[[self tableView] reloadData];
