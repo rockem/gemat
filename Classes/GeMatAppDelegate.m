@@ -24,15 +24,16 @@
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	gematViewController = [[GematViewController alloc] init];
 	gematViewController = [self createGematViewController];
-	UINavigationController *navigationBar = [[UINavigationController alloc] initWithRootViewController:gematViewController];
-	
-	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]  bounds]];
-	[window setAutoresizesSubviews:YES];
-	[window addSubview:[navigationBar view]];
-	[self.window makeKeyAndVisible];
     
+    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen]  bounds]];
+    navController = 
+        [[UINavigationController alloc] initWithRootViewController:gematViewController];
+    
+    [window addSubview:[navController view]];
+    [window setAutoresizesSubviews:YES];
+	[window makeKeyAndVisible];
+        
 	return YES;
 }
 
@@ -83,14 +84,14 @@
 }
 
 - (void)dealloc {
-	[window release];
+    [window release];
 	[super dealloc];
 }
 
 - (GematViewController *)createGematViewController {
 	GematViewController *viewController = [[GematViewController alloc] init];
 	[viewController setPhrases:[self createPhrasesArray]];
-	return viewController;
+	return [viewController autorelease];
 }
 
 - (NSMutableArray *)createPhrasesArray {
