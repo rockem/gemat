@@ -12,7 +12,7 @@
 #import "MacroUtils.h"
 
 @interface GematricCalc() 
-- (NSDictionary*)createCalcTypeToPhraseCalcMap;
+- (void)createCalcTypeToPhraseCalcMap;
 @end
 
 
@@ -21,18 +21,20 @@
 
 - (id)init {
 	[super init];
-	calcTypeToPhraseCalc = [self createCalcTypeToPhraseCalcMap];
+	[self createCalcTypeToPhraseCalcMap];
 	return self;
 }
 
-- (NSDictionary*)createCalcTypeToPhraseCalcMap {
-	NSMutableDictionary *phraseCalcs = [[NSMutableDictionary alloc] init];
-	
-	[phraseCalcs setObject:[[RegularNumberGematricPhraseCalc alloc] init] forKey:INTOBJ(Big)];
-	GematricPhraseCalc *regularPhraseCalc = [[RegularNumberGematricPhraseCalc alloc] init];
-	[phraseCalcs setObject:[[SmallMethodGematricCalc alloc] initWithAnotherCalc:regularPhraseCalc] forKey:INTOBJ(Small)];
-	
-	return phraseCalcs;
+- (void)createCalcTypeToPhraseCalcMap {
+	calcTypeToPhraseCalc = [[NSMutableDictionary alloc] init];
+    
+    GematricPhraseCalc *regularCalc = [[RegularNumberGematricPhraseCalc alloc] init];
+	[calcTypeToPhraseCalc setObject:regularCalc forKey:INTOBJ(Big)];
+    
+    GematricPhraseCalc *smallMethodCalc = [[SmallMethodGematricCalc alloc] initWithAnotherCalc:regularCalc];
+	[calcTypeToPhraseCalc setObject:smallMethodCalc forKey:INTOBJ(Small)];
+    [regularCalc release];
+    [smallMethodCalc release];
 }
 
 - (id)initWithCalculationMethod:(enum eCalculationMethod)method {
@@ -42,7 +44,8 @@
 }
 
 - (void) dealloc {
-	[calcTypeToPhraseCalc release];
+    [calcTypeToPhraseCalc release];
+    calcTypeToPhraseCalc = nil;
 	[super dealloc];
 }
 

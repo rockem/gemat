@@ -13,6 +13,7 @@
 @interface GeMatAppDelegate : NSObject <UIApplicationDelegate> {
 	
 	GematViewController *gematViewController;
+    UINavigationController *navController;
 	UIWindow *window;
 }
 

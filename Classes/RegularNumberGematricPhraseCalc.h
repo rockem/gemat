@@ -11,7 +11,7 @@
 
 @interface RegularNumberGematricPhraseCalc : GematricPhraseCalc {
 
-	NSDictionary *gematricDictionary;
+	NSMutableDictionary *gematricDictionary;
 }
 
 @end

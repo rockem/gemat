@@ -39,4 +39,11 @@
 	}
 	return sum;
 }
+
+- (void) dealloc {
+	[super dealloc];
+}
+
+
+
 @end

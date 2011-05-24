@@ -12,7 +12,7 @@
 @interface GematricCalc : NSObject {
 	enum eCalculationMethod {Big = 1, Small = 0} calculationMethod;
 	
-	NSDictionary *calcTypeToPhraseCalc;
+	NSMutableDictionary *calcTypeToPhraseCalc;
 
 }
 @property (nonatomic) enum eCalculationMethod calculationMethod;

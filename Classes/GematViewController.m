@@ -98,14 +98,26 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    [lblPhraseValue release];
+    lblPhraseValue = nil;
+    [txtPhrase release];
+    txtPhrase = nil;
+    [scMethodSelector release];
+    scMethodSelector = nil;
+    [tblPhrases release];
+    tblPhrases = nil;
 }
 
-
 - (void)dealloc {
-	[phrases release];
+    NSLog(@"%@",[NSThread callStackSymbols]);
+    [lblPhraseValue release];
+    [txtPhrase release];
 	[gematricCalc release];
+    gematricCalc = nil;
+    [parallelPhrasesViewController release];
+    parallelPhrasesViewController = nil;
+    [phrases release];
+    phrases = nil;
 	[super dealloc];
 }
 
@@ -136,9 +148,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 }
 
 - (NSString*)getCellTextForIndex:(NSIndexPath *) indexPath {
+    
 	NSUInteger row = [indexPath row];
 	NSString *currentPhrase = [phrases objectAtIndex:row];
-	int gematricValue = [gematricCalc getValueOf:currentPhrase];
+    int gematricValue = [gematricCalc getValueOf:currentPhrase];
 	return [NSString stringWithFormat:@"%@ = %i", currentPhrase, gematricValue];
 }
 
@@ -174,7 +187,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 
 - (void)updatePhrasesWith:(NSString*)newPhrase {
 	[[self phrases] removeObject:newPhrase];
-	[[self phrases] insertObject:[newPhrase copy] atIndex:0];
+	[[self phrases] insertObject:[[newPhrase copy] autorelease] atIndex:0];
 }
 
 - (void)updatephrasesValue {

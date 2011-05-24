@@ -35,13 +35,19 @@
 - (id)init {
 	gematricCalc = [[GematricCalc alloc] init];	
 	matchingParallelPhrases = [[NSMutableArray alloc] init];
-	allParallelPhrases = [self createParallelPhrasesArray] ;
-	return self;
+	allParallelPhrases = [[self createParallelPhrasesArray] retain];
+    return self;
 }
-
 #pragma mark -
 #pragma mark View lifecycle
 
+
+/*- (void)viewDidLoad {
+	[super viewDidLoad];
+	gematricCalc = [[GematricCalc alloc] init];	
+	matchingParallelPhrases = [NSMutableArray array];
+	allParallelPhrases = [self createParallelPhrasesArray];
+}*/
 
 - (NSArray*)createParallelPhrasesArray {
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"phrases" ofType:@"txt"];  
@@ -50,26 +56,18 @@
 
 - (NSArray*)getAllPhrasesFrom:(NSString*)filePath
 {
-	NSArray* phrasesArr = [[NSArray alloc] init];
+	NSArray* phrasesArr = [[[NSArray alloc] init] autorelease];
 	if(filePath) {
 		NSString *myText = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 		if(myText) {
-			[phrasesArr release];
+            // [phrasesArr release];
 			phrasesArr = [myText componentsSeparatedByString:@"\r\n"];
+            // [phrasesArr retain];
 		}
 	}
-	[phrasesArr retain];
 	return phrasesArr;
 }
  
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[[self navigationItem] setTitle:currentPhrase];
-    [[self tableView] scrollToRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:0] 
-                            atScrollPosition:UITableViewScrollPositionNone 
-                                    animated:NO];
-}
-
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -181,7 +179,7 @@
 /*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-    
+    /*
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
@@ -208,15 +206,19 @@
 
 - (void)dealloc {
 	[gematricCalc release];
-	[allParallelPhrases release];
+    gematricCalc = nil;
 	[matchingParallelPhrases release];
-	[currentPhrase release];
+    matchingParallelPhrases = nil;
+    [allParallelPhrases release];
+    allParallelPhrases = nil;
 	[super dealloc];
 }
 
 - (void)setPhraseAndMethod:(NSString*)newPhrase calcMethod:(enum eCalculationMethod)method {
+    [currentPhrase release];
 	currentPhrase = [newPhrase copy];
 	NSLog(@"new phrase %@", currentPhrase);
+    [[self navigationItem] setTitle:currentPhrase];
 	[gematricCalc setCalculationMethod:method];
 	[self updateParallelPhrases];
 	[[self tableView] reloadData];
@@ -232,6 +234,7 @@
 	}
 	[matchingParallelPhrases removeAllObjects];
 	[matchingParallelPhrases addObjectsFromArray:[matchedPhrases sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)]];
+    [matchedPhrases release];
 }	
 
 	
