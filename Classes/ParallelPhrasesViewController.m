@@ -42,13 +42,6 @@
 #pragma mark View lifecycle
 
 
-/*- (void)viewDidLoad {
-	[super viewDidLoad];
-	gematricCalc = [[GematricCalc alloc] init];	
-	matchingParallelPhrases = [NSMutableArray array];
-	allParallelPhrases = [self createParallelPhrasesArray];
-}*/
-
 - (NSArray*)createParallelPhrasesArray {
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"phrases" ofType:@"txt"];  
 	return [self getAllPhrasesFrom:filePath];
@@ -73,6 +66,15 @@
     [super viewDidAppear:animated];
 }
 */
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[self tableView] scrollToRowAtIndexPath: [NSIndexPath indexPathForRow:0 inSection:0] 
+                            atScrollPosition:UITableViewScrollPositionNone 
+                                        animated:NO];
+}
+
+
 /*
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -179,7 +181,7 @@
 /*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-    /*
+    
     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.

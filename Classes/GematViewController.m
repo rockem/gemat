@@ -72,6 +72,11 @@
 	[self updatephrasesValue];
 }
 
+- (void) viewWillAppear:(BOOL) animated {
+    [tblPhrases deselectRowAtIndexPath:[tblPhrases indexPathForSelectedRow] animated:YES];
+}
+
+
 - (void)tableView:(UITableView *)tableView 
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if(editingStyle == UITableViewCellEditingStyleDelete) {
@@ -142,7 +147,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 		cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault
 									  reuseIdentifier:SimpleTableIdentifier] autorelease];
 		cell.textLabel.textAlignment = UITextAlignmentRight;
-        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
 	return cell;
 }
