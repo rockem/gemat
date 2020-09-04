@@ -12,7 +12,7 @@
 @interface GeMatAppDelegate() 
 - (void)archivePhrases;
 - (NSString *)pathInDocumentDirectory:(NSString *)fileName;
-- (NSString *)phrasesArrayPath;
+- (NSString *)phrasesArrayPath;∆
 - (GematViewController *)createGematViewController;
 - (NSMutableArray *)createPhrasesArray;
 @end

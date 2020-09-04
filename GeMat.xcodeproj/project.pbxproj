@@ -38,6 +38,20 @@
 			remoteGlobalIDString = 4C9550A912C2B3B80002D8EC;
 			remoteInfo = Tests;
 		};
+		4CEA3D2A13AD02B600AFFDA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CEA3D2613AD02B100AFFDA3 /* PhrasesUpdater.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4CEA3D1513AD02B100AFFDA3;
+			remoteInfo = PhrasesUpdater;
+		};
+		4CFA4B30149207C900403E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4CEA3D2613AD02B100AFFDA3 /* PhrasesUpdater.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4C0D9BF41491521500EB1083;
+			remoteInfo = Tests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +81,8 @@
 		4CD32C4313599243007C7F23 /* SmallMethodGematricCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallMethodGematricCalc.m; sourceTree = "<group>"; };
 		4CD32C7F1359B93F007C7F23 /* MacroUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacroUtils.h; path = Classes/MacroUtils.h; sourceTree = "<group>"; };
 		4CD32CBA1359BC8E007C7F23 /* GematricPhraseCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GematricPhraseCalc.m; sourceTree = "<group>"; };
+		4CEA3CD813ACC07200AFFDA3 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		4CEA3D2613AD02B100AFFDA3 /* PhrasesUpdater.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PhrasesUpdater.xcodeproj; path = PhrasesUpdater/PhrasesUpdater.xcodeproj; sourceTree = "<group>"; };
 		4CEC9A93133A1C9B00EB5AA6 /* phrases.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phrases.txt; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* GeMat-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GeMat-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +141,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4CEA3D2613AD02B100AFFDA3 /* PhrasesUpdater.xcodeproj */,
 				4C9550B112C2B3D00002D8EC /* UTests */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -163,6 +180,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				4CEA3CD813ACC07200AFFDA3 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +191,15 @@
 				4C9550B312C2B3ED0002D8EC /* GematricCalcTests.m */,
 			);
 			name = UTests;
+			sourceTree = "<group>";
+		};
+		4CEA3D2713AD02B100AFFDA3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CEA3D2B13AD02B600AFFDA3 /* PhrasesUpdater */,
+				4CFA4B31149207C900403E6C /* Tests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +258,12 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4CEA3D2713AD02B100AFFDA3 /* Products */;
+					ProjectRef = 4CEA3D2613AD02B100AFFDA3 /* PhrasesUpdater.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* GeMat */,
@@ -238,6 +271,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4CEA3D2B13AD02B600AFFDA3 /* PhrasesUpdater */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = PhrasesUpdater;
+			remoteRef = 4CEA3D2A13AD02B600AFFDA3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4CFA4B31149207C900403E6C /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = 4CFA4B30149207C900403E6C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {

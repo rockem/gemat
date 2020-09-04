@@ -53,9 +53,7 @@
 	if(filePath) {
 		NSString *myText = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
 		if(myText) {
-            // [phrasesArr release];
-			phrasesArr = [myText componentsSeparatedByString:@"\r\n"];
-            // [phrasesArr retain];
+            phrasesArr = [myText componentsSeparatedByString:@"\r\n"];
 		}
 	}
 	return phrasesArr;
